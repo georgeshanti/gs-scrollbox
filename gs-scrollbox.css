@@ -1,0 +1,77 @@
+:root{
+    --scrollbox-width : 300px;
+    --scrollbox-height : 300px;
+    --scrollbar-width : 20px;
+    --scrollbutton-height : 20px;
+    --scrollbox-content-color : #dee9f3;
+    --scrollbar-space-color : #d6dbde;
+    --scrollbar-color : #a6c5d8;
+    --scrollbutton-color : #a6c5d8;
+    --scroll-transition-duration : 0.5s;
+    --scrollbox-content-padding : 10px;
+}
+
+.gs-scrollbox{
+    position: relative;
+    width: var(--scrollbox-width);
+    height: var(--scrollbox-height);
+    overflow: hidden;
+}
+
+.gs-scrollbox-content{
+    width : calc(var(--scrollbox-width) - var(--scrollbar-width) - var(--scrollbox-content-padding) - var(--scrollbox-content-padding));
+    padding : var(--scrollbox-content-padding) ;
+    min-height: var(--scrollbox-height);
+    background: var(--scrollbox-content-color);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition-property: top;
+    transition-duration: var(--scroll-transition-duration);
+}
+
+.gs-scrollbar-container{
+    width: var(--scrollbar-width);
+    height: var(--scrollbox-height);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.gs-scrollup{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    height: var(--scrollbutton-height);
+    background: var(--scrollbutton-color);
+}
+
+.gs-scrollbar-space{
+    position: absolute;
+    background: var(--scrollbar-space-color);
+    top: var(--scrollbutton-height);
+    left:0px;
+    width: 100%;
+    height: calc( var(--scrollbox-height) - var(--scrollbutton-height) - var(--scrollbutton-height) );
+}
+
+.gs-scrollbar{
+    position: absolute;
+    background: var(--scrollbar-color);
+    height: 50px;
+    top: 0px;
+    left:0px;
+    width: 100%;
+    transition-property: top;
+    transition-duration: var(--scroll-transition-duration);
+}
+
+.gs-scrolldown{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+    height: var(--scrollbutton-height);
+    background: var(--scrollbutton-color);
+}
